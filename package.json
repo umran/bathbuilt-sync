@@ -1,0 +1,29 @@
+{
+  "name": "bathbuilt-sync",
+  "version": "1.0.0",
+  "description": "synchronization service for bathbuilt",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umran/bathbuilt-sync.git"
+  },
+  "keywords": [
+    "contentful",
+    "sync"
+  ],
+  "author": "Ahmed Umran Hussain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umran/bathbuilt-sync/issues"
+  },
+  "homepage": "https://github.com/umran/bathbuilt-sync#readme",
+  "dependencies": {
+    "async": "^2.6.1",
+    "contentful": "^6.1.1",
+    "mongoose": "^5.1.4",
+    "slug": "^0.9.1"
+  }
+}
