@@ -23,6 +23,7 @@
   "dependencies": {
     "async": "^2.6.1",
     "contentful": "^6.1.1",
+    "contentful-webhook-server": "^1.2.0",
     "mongoose": "^5.1.4",
     "slug": "^0.9.1"
   }
