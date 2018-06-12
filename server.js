@@ -28,10 +28,16 @@ var queue = async.queue(function(task, callback) {
         return
       }
 
-      sync.process(res)
+      // sync after 2 minutes and 30 seconds
+      setTimeout(function(){
+        sync.process(res)
+      }, 150000)
+
+      // release worker after an additional 2 minutes and 30 seconds
       setTimeout(function(){
         callback()
-      }, 300000)
+      }, 150000)
+
     })
 }, 1)
 
