@@ -8,9 +8,9 @@ var queue = async.queue(function(task, callback) {
 }, 1)
 
 queue.push({name: 'publish'}, function(err) {
-    console.log('finished processing publish');
+  console.log('finished processing publish');
 })
 
 queue.push({name: 'unpublish'}, function(err) {
-    console.log('finished processing unpublish');
+  console.log('finished processing unpublish');
 })
