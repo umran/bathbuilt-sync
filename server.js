@@ -37,14 +37,14 @@ var queue = async.queue(function(task, callback) {
 
 server.on('ContentManagement.Entry.publish', function(req){
   console.log('sync of type publish queued')
-  q.push({type: 'publish'}, function(err) {
+  queue.push({type: 'publish'}, function(err) {
       console.log('finished processing sync of type publish')
   })
 })
 
 server.on('ContentManagement.Entry.unpublish', function(req){
   console.log('sync of type unpublish queued')
-  q.push({type: 'unpublish'}, function(err) {
+  queue.push({type: 'unpublish'}, function(err) {
       console.log('finished processing sync of type unpublish')
   })
 })
