@@ -49,6 +49,6 @@ server.on('ContentManagement.Entry.unpublish', function(req){
   })
 })
 
-server.listen(80, function(){
-  console.log('Contentful webhook server running on port ' + 80)
+server.listen(3001, function(){
+  console.log('Contentful webhook server running on port ' + 3001)
 })
