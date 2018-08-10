@@ -22,23 +22,22 @@ mongoose.connection.on('disconnected', function(){
 
 var queue = async.queue(function(task, callback) {
     console.log('initiating sync of type: ' + task.type)
-    sync.init(function(err, res) {
-      if (err) {
-        callback(err)
-        return
-      }
+    setTimeout(function() {
+      sync.init(function(err, res) {
+        if (err) {
+          callback(err)
+          return
+        }
 
-      // sync after 2 minutes and 30 seconds
-      setTimeout(function(){
         sync.process(res)
-      }, 150000)
 
-      // release worker after an additional 2 minutes and 30 seconds
-      setTimeout(function(){
-        callback()
-      }, 150000)
+        // release worker after an additional 2 minutes and 30 seconds
+        setTimeout(function(){
+          callback()
+        }, 150000)
 
-    })
+      })
+    }, 150000)
 }, 1)
 
 server.on('ContentManagement.Entry.publish', function(req){
